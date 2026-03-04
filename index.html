@@ -19,6 +19,8 @@
   <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
   <!-- Font-kit for embedding fonts -->
   <script src="https://unpkg.com/@pdf-lib/fontkit@1.1.1/dist/fontkit.umd.min.js"></script>
+  <!-- Google AdSense (uncomment and replace with your publisher ID) -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 </head>
 <body>
 
@@ -35,6 +37,19 @@
       <p>Drag &amp; drop a PDF file here, or click to browse</p>
       <button class="btn btn-primary" id="browse-btn">Browse Files</button>
       <input type="file" id="file-input" accept=".pdf" hidden />
+    </div>
+
+    <!-- Ad: Welcome Screen Banner -->
+    <div class="ad-slot ad-welcome" id="ad-welcome">
+      <!-- PASTE YOUR ADSENSE AD UNIT CODE HERE -->
+      <!-- Example:
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:728px;height:90px"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+      <div class="ad-placeholder">Advertisement</div>
     </div>
   </div>
 
@@ -196,6 +211,19 @@
       </aside>
     </div>
 
+    <!-- Ad: Editor Bottom Banner -->
+    <div class="ad-slot ad-bottom-banner" id="ad-bottom-banner">
+      <!-- PASTE YOUR ADSENSE AD UNIT CODE HERE -->
+      <!-- Example:
+      <ins class="adsbygoogle"
+           style="display:inline-block;width:728px;height:90px"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      -->
+      <div class="ad-placeholder">Advertisement</div>
+    </div>
+
   </div>
 
   <!-- Text Input Modal -->
@@ -220,6 +248,28 @@
         <button class="btn" id="merge-cancel">Cancel</button>
         <button class="btn btn-primary" id="merge-confirm">Merge</button>
       </div>
+    </div>
+  </div>
+
+  <!-- Ad: Save Interstitial -->
+  <div class="modal hidden" id="ad-interstitial">
+    <div class="modal-content ad-interstitial-content">
+      <div class="ad-interstitial-header">
+        <span>Your file is being prepared...</span>
+        <span class="ad-countdown" id="ad-countdown">5</span>
+      </div>
+      <div class="ad-slot ad-interstitial-slot" id="ad-interstitial-slot">
+        <!-- PASTE YOUR ADSENSE AD UNIT CODE HERE -->
+        <!-- Example:
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:336px;height:280px"
+             data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+             data-ad-slot="XXXXXXXXXX"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        -->
+        <div class="ad-placeholder ad-placeholder-lg">Advertisement</div>
+      </div>
+      <button class="btn btn-primary ad-skip-btn hidden" id="ad-skip-btn">Continue to Download</button>
     </div>
   </div>
 

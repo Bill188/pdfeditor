@@ -672,6 +672,9 @@
       let filename = userInput.trim() || defaultName;
       if (!/\.pdf$/i.test(filename)) filename += '.pdf';
 
+      // Show interstitial ad before download
+      await showAdInterstitial();
+
       const blob = new Blob([savedBytes], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
@@ -685,6 +688,36 @@
       console.error(err);
       showToast('Save failed: ' + err.message, 'error', 4000);
     }
+  }
+
+  // ============================================
+  // Ad Interstitial (shown before download)
+  // ============================================
+  function showAdInterstitial() {
+    return new Promise((resolve) => {
+      const modal = $('#ad-interstitial');
+      const countdown = $('#ad-countdown');
+      const skipBtn = $('#ad-skip-btn');
+      let seconds = 5;
+
+      modal.classList.remove('hidden');
+      skipBtn.classList.add('hidden');
+      countdown.textContent = seconds;
+
+      const timer = setInterval(() => {
+        seconds--;
+        countdown.textContent = seconds;
+        if (seconds <= 0) {
+          clearInterval(timer);
+          skipBtn.classList.remove('hidden');
+        }
+      }, 1000);
+
+      skipBtn.onclick = () => {
+        modal.classList.add('hidden');
+        resolve();
+      };
+    });
   }
 
   // ============================================

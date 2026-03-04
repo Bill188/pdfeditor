@@ -472,10 +472,84 @@ body {
   to   { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
+/* ---- Ad Slots ---- */
+.ad-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.ad-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 728px;
+  max-width: 100%;
+  height: 90px;
+  background: var(--bg-tertiary);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.ad-placeholder-lg {
+  width: 336px;
+  height: 280px;
+}
+
+/* Welcome screen ad */
+.ad-welcome {
+  margin-top: 24px;
+}
+
+/* Editor bottom banner */
+.ad-bottom-banner {
+  flex-shrink: 0;
+  padding: 6px 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+}
+
+/* Save interstitial */
+.ad-interstitial-content {
+  text-align: center;
+  min-width: 400px;
+}
+.ad-interstitial-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.ad-countdown {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+}
+.ad-interstitial-slot {
+  margin-bottom: 16px;
+}
+.ad-skip-btn {
+  width: 100%;
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
   .sidebar { width: 0; overflow: hidden; border: none; }
   .toolbar-btn span { display: none; }
   .toolbar-label { display: none; }
   #opt-font-label, #opt-font { display: none; }
+  .ad-placeholder { width: 320px; height: 50px; }
+  .ad-interstitial-content { min-width: auto; }
 }
